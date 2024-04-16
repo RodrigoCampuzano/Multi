@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public abstract class Tramites {
     private String escrituras;
     private String reciboluz;
@@ -5,7 +7,16 @@ public abstract class Tramites {
     private String pagopredial;
     private String cedulacastral;
     private String alineamiento;
+    private String estatus;
 
+
+
+    public String getEstatus() {
+        return estatus;
+    }
+    public void setEstatus(String estatus) {
+        this.estatus = estatus;
+    }
     public String getEscrituras() {
         return escrituras;
     }
@@ -43,7 +54,7 @@ public abstract class Tramites {
         this.alineamiento = alineamiento;
     }
 
-    public abstract void ingresarInmueble();
+    public abstract void ingresarInmueble(ArrayList<Object> listaFinal);
 
 
 }

@@ -7,8 +7,8 @@ public class Inmueble {
     private int precio;
     private int id;
     private String tipo;
-    private int eleccion;
     public static Scanner scanner = new Scanner(System.in);
+    Principal validar = new Principal();
 
     public int getM2() {
         return m2;
@@ -50,23 +50,23 @@ public class Inmueble {
 
         do {
         System.out.println("Ingrese los m2");
-            m2=scanner.nextInt();
+            m2 = validar.decidir();
         } while (m2<1);
         setM2(m2);
         listaCredito.add("M2:"+getM2());
 
         System.out.println("Ingrese el tipo de inmueble 1.-Casa | 2.-Terreno");
-        int eleccion = scanner.nextInt();
+        int eleccion = validar.decidir();
         while (eleccion != 1 && eleccion != 2) {
             System.out.println("Por favor, seleccione 1 para Casa o 2 para Terreno.");
-            eleccion = scanner.nextInt();
+            eleccion = validar.decidir();
         }
         tipo = seleccionarTipo(eleccion);
         listaCredito.add("Tipo de Inmueble: " + tipo);
 
         do {
         System.out.println("Ingrese el precio");
-            precio=scanner.nextInt();
+            precio=validar.decidir();
         } while (precio<1);
         setPrecio(precio);
         listaCredito.add("Precio:"+getPrecio());
@@ -81,23 +81,23 @@ public class Inmueble {
 
         do {
         System.out.println("Ingrese los m2");
-            m2=scanner.nextInt();
+            m2 = validar.decidir();
         } while (m2<1);
         setM2(m2);
         listaContado.add("M2:"+getM2());
 
         System.out.println("Ingrese el tipo de inmueble 1.-Casa | 2.-Terreno");
-        int eleccion = scanner.nextInt();
+        int eleccion = validar.decidir();
         while (eleccion != 1 && eleccion != 2) {
             System.out.println("Por favor, seleccione 1 para Casa o 2 para Terreno.");
-            eleccion = scanner.nextInt();
+            eleccion = validar.decidir();
         }
         tipo = seleccionarTipo(eleccion);
         listaContado.add("Tipo de Inmueble: " + tipo);
 
         do {
         System.out.println("Ingrese el precio");
-            precio=scanner.nextInt();
+            precio = validar.decidir();
         } while (precio<1);
         setPrecio(precio);
         listaContado.add("Precio:"+getPrecio());

@@ -7,6 +7,7 @@ public class Cliente {
     private String rfc;
     private String curp;
     private String nombre;
+    Principal validar = new Principal();
 
     public String getIne() {
         return ine;
@@ -49,37 +50,37 @@ public class Cliente {
         listaCredito.add("Nombre del Cliente:"+getNombre());
         
         System.out.println("¿Cuenta con el INE? (1: Sí / 2: No)");
-        resp = scanner.nextInt();
+        resp = validar.decidir();
         while (resp != 1 && resp != 2) {
             System.out.println("Por favor, ingrese 1 si cuenta con el INE o 2 si no.");
-            resp = scanner.nextInt();
+            resp = validar.decidir();
         }
         setIne(convertirRespuesta(resp));
         listaCredito.add("INE: " + getIne());
 
         System.out.println("¿Cuenta con el Acta de Nacimiento? (1: Sí / 2: No)");
-        resp = scanner.nextInt();
+        resp = validar.decidir();
         while (resp != 1 && resp != 2) {
             System.out.println("Por favor, ingrese 1 si cuenta con el Acta de Nacimiento o 2 si no.");
-            resp = scanner.nextInt();
+            resp = validar.decidir();
         }
         setActanacimineto(convertirRespuesta(resp));
         listaCredito.add("Acta de Nacimiento: " + getActanacimineto());
 
         System.out.println("¿Cuenta con el RFC? (1: Sí / 2: No)");
-        resp = scanner.nextInt();
+        resp = validar.decidir();
         while (resp != 1 && resp != 2) {
             System.out.println("Por favor, ingrese 1 si cuenta con el RFC o 2 si no.");
-            resp = scanner.nextInt();
+            resp = validar.decidir();
         }
         setRfc(convertirRespuesta(resp));
         listaCredito.add("RFC: " + getActanacimineto());
 
         System.out.println("¿Cuenta con la CURP? (1: Sí / 2: No)");
-        resp = scanner.nextInt();
+        resp = validar.decidir();
         while (resp != 1 && resp != 2) {
             System.out.println("Por favor, ingrese 1 si cuenta con la CURP o 2 si no.");
-            resp = scanner.nextInt();
+            resp = validar.decidir();
         }
         setCurp(convertirRespuesta(resp));
         listaCredito.add("CURP: " + getCurp());
@@ -95,38 +96,38 @@ public class Cliente {
         setNombre(nombre);
         listaContado.add("Nombre del Cliente:"+getNombre());
         
-        System.out.println("¿Cuenta con el INE? (1: Sí / 2: No)");
-        resp = scanner.nextInt();
-        while (resp != 1 && resp != 2) {
-            System.out.println("Por favor, ingrese 1 si cuenta con el INE o 2 si no.");
-            resp = scanner.nextInt();
+        System.out.println("¿Cuenta con el INE? 1: Sí");
+        resp = validar.decidir();
+        while (resp != 1) {
+            System.out.println("Por favor, ingrese 1");
+            resp = validar.decidir();
         }
         setIne(convertirRespuesta(resp));
         listaContado.add("INE: " + getIne());
 
-        System.out.println("¿Cuenta con el Acta de Nacimiento? (1: Sí / 2: No)");
-        resp = scanner.nextInt();
-        while (resp != 1 && resp != 2) {
-            System.out.println("Por favor, ingrese 1 si cuenta con el Acta de Nacimiento o 2 si no.");
-            resp = scanner.nextInt();
+        System.out.println("¿Cuenta con el Acta de Nacimiento? 1: Sí");
+        resp = validar.decidir();
+        while (resp != 1) {
+            System.out.println("Por favor, ingrese 1");
+            resp = validar.decidir();
         }
         setActanacimineto(convertirRespuesta(resp));
         listaContado.add("Acta de Nacimiento: " + getActanacimineto());
 
-        System.out.println("¿Cuenta con el RFC? (1: Sí / 2: No)");
-        resp = scanner.nextInt();
-        while (resp != 1 && resp != 2) {
-            System.out.println("Por favor, ingrese 1 si cuenta con el RFC o 2 si no.");
-            resp = scanner.nextInt();
+        System.out.println("¿Cuenta con el RFC? 1: Sí");
+        resp = validar.decidir();
+        while (resp != 1) {
+            System.out.println("Por favor, ingrese 1");
+            resp = validar.decidir();
         }
         setRfc(convertirRespuesta(resp));
         listaContado.add("RFC: " + getActanacimineto());
 
-        System.out.println("¿Cuenta con la CURP? (1: Sí / 2: No)");
-        resp = scanner.nextInt();
-        while (resp != 1 && resp != 2) {
-            System.out.println("Por favor, ingrese 1 si cuenta con la CURP o 2 si no.");
-            resp = scanner.nextInt();
+        System.out.println("¿Cuenta con la CURP? 1: Sí");
+        resp = validar.decidir();
+        while (resp != 1) {
+            System.out.println("Por favor, ingrese 1");
+            resp = validar.decidir();
         }
         setCurp(convertirRespuesta(resp));
         listaContado.add("CURP: " + getCurp());
